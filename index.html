@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webdev — Digital Product Studio</title>
+<link rel="stylesheet" href="./style/index.css">
+<script src="./js/index.js" defer></script>
+</head>
+<body>
+
+<!-- Preloader (pure CSS, hides itself even if JS never runs) -->
+<div class="preloader" aria-hidden="true">
+  <span class="preloader-logo">webdev<span class="nav-logo-paren">()</span></span>
+</div>
+
+<!-- Grain texture -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Vertical editorial grid guides -->
+<div class="grid-guides" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<!-- Back to top -->
+<button class="to-top" id="to-top" aria-label="Back to top" data-cursor="link">↑</button>
+
+<div class="app">
+
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" data-cursor="link">webdev<span class="nav-logo-paren">()</span></a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#work" class="nav-link" data-cursor="link"><span>01</span>Work</a>
+        <a href="#services" class="nav-link" data-cursor="link"><span>02</span>Services</a>
+        <a href="#process" class="nav-link" data-cursor="link"><span>03</span>Process</a>
+        <a href="#pricing" class="nav-link" data-cursor="link"><span>04</span>Pricing</a>
+        <a href="#contact" class="nav-link" data-cursor="link"><span>05</span>Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-cta" id="regist-btn" data-cursor="link" data-open-modal type="button">Start a project</button>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="burger-box">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-top">
+      <span class="mobile-menu-tag">Menu</span>
+      <span class="mobile-menu-count" id="mobile-menu-count">00 / 05</span>
+    </div>
+    <nav class="mobile-menu-links">
+      <a href="#home" class="mobile-link" data-index="01"><span class="mobile-link-index">01</span><span class="mobile-link-text">Home</span></a>
+      <a href="#work" class="mobile-link" data-index="02"><span class="mobile-link-index">02</span><span class="mobile-link-text">Work</span></a>
+      <a href="#services" class="mobile-link" data-index="03"><span class="mobile-link-index">03</span><span class="mobile-link-text">Services</span></a>
+      <a href="#process" class="mobile-link" data-index="04"><span class="mobile-link-index">04</span><span class="mobile-link-text">Process</span></a>
+      <a href="#pricing" class="mobile-link" data-index="05"><span class="mobile-link-index">05</span><span class="mobile-link-text">Pricing</span></a>
+      <a href="#contact" class="mobile-link" data-index="06"><span class="mobile-link-index">06</span><span class="mobile-link-text">Contact</span></a>
+    </nav>
+    <div class="mobile-menu-bottom">
+      <a href="mailto:hello@webdev.studio">hello@webdev.studio</a>
+      <a href="tel:+15551234567">+1 (555) 123-4567</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Digital product studio — est. 2019</p>
+        <h1 class="hero-title">
+          <span class="hero-line" data-reveal>We build the web</span>
+          <span class="hero-line hero-line-serif" data-reveal>your business runs on
+            <svg class="hero-underline" width="150" height="14" viewBox="0 0 150 14" aria-hidden="true">
+              <path d="M2 10C30 2 60 2 75 7C90 12 120 12 148 4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+        <p class="hero-subtitle" data-reveal>
+          A small studio of designers and engineers shipping fast, accessible, beautifully-built
+          websites and products — from first sketch to production deploy.
+        </p>
+        <div class="hero-actions" data-reveal>
+          <button class="btn-primary" data-cursor="link" data-open-modal type="button">Get a free consultation</button>
+          <a href="#work" class="btn-secondary" data-cursor="link">See our work</a>
+        </div>
+        <div class="hero-stats" data-reveal>
+          <div class="stat-item">
+            <span class="stat-number" data-count="500">0</span>
+            <span class="stat-label">Projects shipped</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="98" data-suffix="%">0</span>
+            <span class="stat-label">Client satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="5">0</span>
+            <span class="stat-label">Years in business</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="editor-window">
+          <div class="editor-topbar">
+            <span class="editor-dot"></span>
+            <span class="editor-dot"></span>
+            <span class="editor-dot"></span>
+            <span class="editor-title">project.build</span>
+          </div>
+          <div class="editor-body">
+            <p class="editor-line"><span class="editor-ghost">01</span><span class="editor-kw">const</span> studio = <span class="editor-str">"webdev"</span>;</p>
+            <p class="editor-line"><span class="editor-ghost">02</span><span class="editor-kw">function</span> <span class="editor-fn">ship</span>(idea) {</p>
+            <p class="editor-line"><span class="editor-ghost">03</span>&nbsp;&nbsp;return idea</p>
+            <p class="editor-line"><span class="editor-ghost">04</span>&nbsp;&nbsp;&nbsp;&nbsp;.<span class="editor-fn">design</span>()</p>
+            <p class="editor-line"><span class="editor-ghost">05</span>&nbsp;&nbsp;&nbsp;&nbsp;.<span class="editor-fn">build</span>()</p>
+            <p class="editor-line editor-typing"><span class="editor-ghost">06</span>&nbsp;&nbsp;&nbsp;&nbsp;.<span class="editor-fn" id="typing-target"></span><span class="editor-caret">&nbsp;</span></p>
+            <p class="editor-line"><span class="editor-ghost">07</span>}</p>
+          </div>
+          <div class="editor-status">
+            <span class="editor-pulse"></span> deploying to production
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee-track" aria-hidden="true">
+      <span>TechCorp</span><span>StartupXYZ</span><span>RetailPlus</span><span>Northwind</span><span>Bluepeak</span><span>Ferra Goods</span>
+      <span>TechCorp</span><span>StartupXYZ</span><span>RetailPlus</span><span>Northwind</span><span>Bluepeak</span><span>Ferra Goods</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <p class="section-eyebrow" data-reveal>About the studio</p>
+          <h2 class="section-title" data-reveal>Small team.<br>Senior craft.<br>No hand-offs.</h2>
+          <p class="section-description" data-reveal>
+            We're a compact studio — strategists, designers and engineers who stay on your
+            project from kickoff to launch. Five years in, that's meant fewer meetings,
+            faster decisions, and work we're proud to put our name on.
+          </p>
+          <div class="about-features" data-reveal>
+            <div class="feature-item">
+              <div class="feature-icon">01</div>
+              <div class="feature-text">
+                <h4>Senior-only team</h4>
+                <p>Every project is staffed by people who've shipped dozens before yours.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">02</div>
+              <div class="feature-text">
+                <h4>Fixed scope, fixed price</h4>
+                <p>You know the cost and timeline before we write a line of code.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">03</div>
+              <div class="feature-text">
+                <h4>30 days of support, free</h4>
+                <p>We stay on-call after launch to catch anything real users find first.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual" data-reveal>
+          <div class="signal-graphic" id="signal-graphic" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>What we do</p>
+        <h2 class="section-title-lg" data-reveal>Everything a modern product needs</h2>
+      </div>
+
+      <div class="service-rows" data-reveal>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">01</span>
+          <div class="service-main">
+            <h3>Web development</h3>
+            <p>Custom sites and web apps, built fast and built to last on modern frameworks.</p>
+          </div>
+          <div class="service-tags">
+            <span>Responsive</span><span>SEO-ready</span><span>Fast-loading</span>
+          </div>
+        </div>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">02</span>
+          <div class="service-main">
+            <h3>Mobile apps</h3>
+            <p>Native and cross-platform apps that feel native everywhere they run.</p>
+          </div>
+          <div class="service-tags">
+            <span>iOS & Android</span><span>Cross-platform</span>
+          </div>
+        </div>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">03</span>
+          <div class="service-main">
+            <h3>Product design</h3>
+            <p>Interfaces shaped around what your users actually do, not what looks nice in a deck.</p>
+          </div>
+          <div class="service-tags">
+            <span>User research</span><span>Design systems</span>
+          </div>
+        </div>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">04</span>
+          <div class="service-main">
+            <h3>Growth marketing</h3>
+            <p>Campaigns tied to revenue, not vanity metrics — SEO, paid, and lifecycle.</p>
+          </div>
+          <div class="service-tags">
+            <span>SEO & SEM</span><span>Analytics</span>
+          </div>
+        </div>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">05</span>
+          <div class="service-main">
+            <h3>Cloud & infrastructure</h3>
+            <p>Scalable, secure infrastructure so traffic spikes are a good problem to have.</p>
+          </div>
+          <div class="service-tags">
+            <span>AWS & Azure</span><span>CI/CD</span>
+          </div>
+        </div>
+        <div class="service-row" data-cursor="link">
+          <span class="service-num">06</span>
+          <div class="service-main">
+            <h3>Care & maintenance</h3>
+            <p>Ongoing monitoring, updates and support once your product is live.</p>
+          </div>
+          <div class="service-tags">
+            <span>24/7 monitoring</span><span>Updates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process (new) -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>How we work</p>
+        <h2 class="section-title-lg" data-reveal>Five steps, no surprises</h2>
+      </div>
+      <div class="process-track" data-reveal>
+        <div class="process-step">
+          <span class="process-index">01</span>
+          <h4>Discovery</h4>
+          <p>We map your goals, users and constraints before anything gets designed.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-index">02</span>
+          <h4>Design</h4>
+          <p>Wireframes to high-fidelity screens, reviewed together at every stage.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-index">03</span>
+          <h4>Build</h4>
+          <p>Engineers turn approved designs into tested, production-ready code.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-index">04</span>
+          <h4>Launch</h4>
+          <p>We handle deployment, QA and the checklist nobody wants to own.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-index">05</span>
+          <h4>Grow</h4>
+          <p>Post-launch support and iteration based on real usage data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech stack (new) -->
+  <section class="stack">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Under the hood</p>
+        <h2 class="section-title-lg" data-reveal>Tools we reach for</h2>
+      </div>
+      <div class="stack-groups" data-reveal>
+        <div class="stack-group">
+          <h5>Frontend</h5>
+          <div class="stack-pills">
+            <span>React</span><span>Vue</span><span>TypeScript</span><span>Next.js</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h5>Backend</h5>
+          <div class="stack-pills">
+            <span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>GraphQL</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h5>Cloud</h5>
+          <div class="stack-pills">
+            <span>AWS</span><span>Azure</span><span>Docker</span><span>Kubernetes</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h5>Design</h5>
+          <div class="stack-pills">
+            <span>Figma</span><span>Framer</span><span>After Effects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Selected work</p>
+        <h2 class="section-title-lg" data-reveal>Recent projects</h2>
+      </div>
+      <div class="portfolio-featured" data-reveal data-cursor="link">
+        <div class="portfolio-featured-visual">
+          <span class="portfolio-featured-tag">Featured</span>
+          <span class="portfolio-arrow">↗</span>
+        </div>
+        <div class="portfolio-featured-content">
+          <h3>Northwind Logistics — full platform rebuild</h3>
+          <p>A ground-up rebuild of a 12-year-old logistics platform: real-time tracking, a new design system, and a 40% faster dashboard.</p>
+          <div class="portfolio-tags"><span>Next.js</span><span>GraphQL</span><span>AWS</span></div>
+        </div>
+      </div>
+
+      <div class="portfolio-grid" data-reveal>
+        <div class="portfolio-item" data-cursor="link">
+          <div class="portfolio-image portfolio-image-1">
+            <span class="portfolio-icon">💼</span>
+          
+            <span class="portfolio-arrow">↗</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>E-commerce platform</h3>
+            <p>Modern online store with a checkout flow tuned for conversion.</p>
+            <div class="portfolio-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-cursor="link">
+          <div class="portfolio-image portfolio-image-2">
+            <span class="portfolio-icon">🏥</span>
+          
+            <span class="portfolio-arrow">↗</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Healthcare mobile app</h3>
+            <p>Patient management with appointment booking and telemedicine.</p>
+            <div class="portfolio-tags"><span>React Native</span><span>Firebase</span></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-cursor="link">
+          <div class="portfolio-image portfolio-image-3">
+            <span class="portfolio-icon">🏦</span>
+          
+            <span class="portfolio-arrow">↗</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Banking management system</h3>
+            <p>Secure financial platform with advanced access controls.</p>
+            <div class="portfolio-tags"><span>Vue.js</span><span>Python</span><span>PostgreSQL</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing (new) -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Pricing</p>
+        <h2 class="section-title-lg" data-reveal>Plans that scale with you</h2>
+      </div>
+      <div class="pricing-grid" data-reveal>
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <p class="pricing-desc">A focused site to get your business online properly.</p>
+          <p class="pricing-price">$2,900<span>one-time</span></p>
+          <ul class="pricing-list">
+            <li>Up to 5 pages</li>
+            <li>Responsive design</li>
+            <li>Basic SEO setup</li>
+            <li>2 weeks turnaround</li>
+          </ul>
+          <button class="btn-secondary pricing-btn" data-cursor="link" data-open-modal data-plan="Starter" type="button">Choose Starter</button>
+        </div>
+        <div class="pricing-card pricing-card-featured">
+          <span class="pricing-badge">Most popular</span>
+          <h3>Growth</h3>
+          <p class="pricing-desc">For businesses ready to invest in a real product.</p>
+          <p class="pricing-price">$8,500<span>one-time</span></p>
+          <ul class="pricing-list">
+            <li>Up to 15 pages / views</li>
+            <li>Custom design system</li>
+            <li>CMS integration</li>
+            <li>30 days of support</li>
+          </ul>
+          <button class="btn-primary pricing-btn" data-cursor="link" data-open-modal data-plan="Growth" type="button">Choose Growth</button>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="pricing-desc">Complex products, integrations and ongoing partnership.</p>
+          <p class="pricing-price">Custom<span>scoped together</span></p>
+          <ul class="pricing-list">
+            <li>Unlimited scope</li>
+            <li>Dedicated team</li>
+            <li>SLA & priority support</li>
+            <li>Quarterly roadmap reviews</li>
+          </ul>
+          <button class="btn-secondary pricing-btn" data-cursor="link" data-open-modal data-plan="Enterprise" type="button">Talk to us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Testimonials</p>
+        <h2 class="section-title-lg" data-reveal>What clients say</h2>
+      </div>
+      <div class="testimonials-grid" data-reveal>
+        <div class="testimonial-card">
+          <p class="quote-icon">"</p>
+          <p class="testimonial-text">Webdev transformed our online presence completely. Their team delivered exactly what we needed and more.</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">JS</div>
+            <div class="author-info"><h4>John Smith</h4><p>CEO, TechCorp</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote-icon">"</p>
+          <p class="testimonial-text">Professional, reliable and innovative. They helped us launch our app successfully and ahead of schedule.</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">MJ</div>
+            <div class="author-info"><h4>Maria Johnson</h4><p>Founder, StartupXYZ</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote-icon">"</p>
+          <p class="testimonial-text">Their marketing strategy increased our organic traffic by 300% in two quarters. Genuinely great results.</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">DW</div>
+            <div class="author-info"><h4>David Wilson</h4><p>Marketing Director, RetailPlus</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (new) -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>FAQ</p>
+        <h2 class="section-title-lg" data-reveal>Good questions</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does a typical project take?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Most sites take 2–6 weeks depending on scope. We give you a firm date after discovery, before any contract is signed.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you work with existing codebases?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Yes — we regularly take over or extend existing products. We start with a short technical audit before quoting.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens after launch?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Every plan includes a support window after go-live. After that, you can pay as you go or set up a retainer.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can we start with just design?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Absolutely. Design and build are priced separately, so you can take finished designs to any team you like.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-reveal>Ready to build something real?</h2>
+        <p data-reveal>Tell us about your project and we'll reply within one business day with next steps.</p>
+        <div class="cta-actions" data-reveal>
+          <button class="btn-primary" data-cursor="link" data-open-modal type="button">Get free consultation</button>
+          <a href="tel:+15551234567" class="btn-secondary" data-cursor="link">Call us now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-reveal>Contact</p>
+        <h2 class="section-title-lg" data-reveal>Let's talk</h2>
+      </div>
+      <div class="contact-content" data-reveal>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">@</div>
+            <div class="contact-details"><h4>Email</h4><p>hello@webdev.studio</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">#</div>
+            <div class="contact-details"><h4>Phone</h4><p>+1 (555) 123-4567</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">*</div>
+            <div class="contact-details"><h4>Studio</h4><p>123 Business St, City, State 12345</p></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <input type="text" id="f-name" name="name" placeholder=" " required>
+            <label for="f-name">Your name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="f-email" name="email" placeholder=" " required>
+            <label for="f-email">Your email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="f-subject" name="subject" placeholder=" " required>
+            <label for="f-subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="f-message">Your message</label>
+          </div>
+          <div class="form-status" id="contact-status" aria-live="polite"></div>
+          <button type="submit" class="btn-primary" data-cursor="link">
+            <span class="btn-label">Send message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">webdev<span class="nav-logo-paren">()</span></div>
+          <p>A small studio building fast, honest, well-crafted digital products.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Web development</a></li>
+            <li><a href="#services">Mobile apps</a></li>
+            <li><a href="#services">Product design</a></li>
+            <li><a href="#services">Growth marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow</h4>
+          <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">Dribbble</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 webdev(). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Consultation modal -->
+<div class="modal-backdrop" id="modal-backdrop" hidden></div>
+<div class="modal" id="consult-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <button class="modal-close" id="modal-close" type="button" aria-label="Close" data-cursor="link">×</button>
+  <p class="section-eyebrow" id="modal-eyebrow">Free consultation</p>
+  <h3 id="modal-title">Tell us about your project</h3>
+  <form class="modal-form" id="modal-form" novalidate>
+    <input type="hidden" id="m-plan" name="plan" value="">
+    <div class="form-group">
+      <input type="text" id="m-name" name="name" placeholder=" " required>
+      <label for="m-name">Your name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="m-email" name="email" placeholder=" " required>
+      <label for="m-email">Your email</label>
+    </div>
+    <div class="form-group">
+      <textarea id="m-message" name="message" rows="3" placeholder=" "></textarea>
+      <label for="m-message">A few words about your project</label>
+    </div>
+    <div class="form-status" id="modal-status" aria-live="polite"></div>
+    <button type="submit" class="btn-primary" data-cursor="link">
+      <span class="btn-label">Send request</span>
+    </button>
+  </form>
+</div>
+
+</body>
+</html>
